@@ -7,7 +7,9 @@ import router from './routes/routes.js';
 
 /** App Middlewares */
 const app = express();
-app.use(cors());
+app.use(cors(
+  {origin: ["http://localhost:1337/" , "https://med-check.onrender.com"]}
+));
 app.use(express.json());
 config();
 
@@ -21,7 +23,7 @@ app.use('/api', router);
 
 /** Import Connection Files */
 mongoose.connect(
-    `mongodb+srv://xsm9512368740:${process.env.ATLAS_URI}@quiz.uiiilln.mongodb.net/Quiz`
+    `mongodb+srv://xsm9512368740:admin123@quiz.uiiilln.mongodb.net/Quiz`
   )
   .then(() => {
     try {

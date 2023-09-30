@@ -7,9 +7,7 @@ import router from './routes/routes.js';
 
 /** App Middlewares */
 const app = express();
-app.use(cors(
-  {origin: ["http://localhost:1337/" , "https://med-check.onrender.com"]}
-));
+app.use(cors());
 app.use(express.json());
 config();
 
